@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_bom_stock_value_qty_form">
+            <field name="name">product.bom.stock.value.qty</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_kanban_view"/>
+            <field name="arch" type="xml">
+                <field name="lst_price" position="after">
+                    <field name="type"/>
+                </field>
+                <ul position="inside">
+                    <li t-if="record.bom_quantity.raw_value >= 0">
+                        BOM Quantity: <field name="bom_quantity"/> <field name="uom_id"/>
+                    </li>
+                </ul>
+            </field>
+        </record>
+
+    </data>
+</openerp>
