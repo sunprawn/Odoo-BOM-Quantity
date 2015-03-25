@@ -23,6 +23,7 @@ class product_template(osv.osv):
                         prod_min_quantity = bom_qty / line.product_qty
                         prod_min_quantities.append(prod_min_quantity)
                     else:
+                        prod_min_quantities.append(0)
                         stop_compute_bom = True
 
                     if stop_compute_bom:
